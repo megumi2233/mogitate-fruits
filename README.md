@@ -95,6 +95,7 @@ php artisan key:generate
 - Laravel 8.83.8
 - MySQL 8.0
 - Docker (nginx, php, mysql, phpmyadmin)
+- フロントエンドビルド: Laravel Mix 6
 
 ## 🗂 ER図（このプロジェクトのデータ構造）
 このアプリケーションのデータ構造を視覚的に把握するため、以下にER図を掲載しています。
