@@ -1,0 +1,198 @@
+.product-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group label {
+    width: 120px;
+    flex-shrink: 0;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.current-filename {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.current-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.form-group.seasons {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.season-options {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 0;
+}
+
+.season-option {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+}
+
+.season-option:last-child {
+    margin-right: 0;
+}
+
+.season-options label {
+    margin: 0;
+    padding: 0;
+}
+
+.season-option input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+}
+
+.season-option span {
+    margin: 0;
+    padding: 0;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn.save {
+    background-color: #FFD700;
+    color: #333;
+    font-weight: bold;
+}
+
+.btn.back {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn.delete {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* 画像と基本情報を横並びにする */
+.product-main {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* 左側の画像ブロック */
+.product-image-block {
+    flex: 0 0 40%;
+    width: 50%;
+}
+
+.product-image-block img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 右側の情報ブロック */
+.product-info-block {
+    flex: 1;
+    min-width: 0;
+}
+
+.product-image-block input[type="file"] {
+    margin-top: 15px;
+}
+
+.product-info-block .form-group {
+    margin-bottom: 15px;
+}
+
+.delete-form-inline {
+    display: inline-block;
+    margin: 0;
+}
+
+.actions-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.delete-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
