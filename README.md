@@ -17,6 +17,7 @@ Laravel と Docker を使用して、ローカル環境で動作する商品管�
 このプロジェクトのベースとなるコードを取得するために、GitHubからリポジトリをクローンします。
 
 今までの教材の中で~/coachtechディレクトリにlaravelディレクトリを作成しました。 
+
 laravelディレクトリ以下に、laravel-docker-template.gitをクローンしてリポジトリ名をmogitate-fruitsに変更します。
 ```bash
 cd coachtech/laravel
@@ -25,6 +26,7 @@ mv laravel-docker-template mogitate-fruits
 ```
 
 まず、mogitate-fruitsという変更先のリモートリポジトリをpublicで作成します。
+
 変更先のリポジトリの作成が終わったら、ローカルリポジトリから紐付け先を変更します。
 作成したリポジトリから url を取得して、以下のコマンドを実行します。
 ```bash
