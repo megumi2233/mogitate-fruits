@@ -94,7 +94,7 @@ php artisan key:generate
 ※ 共通スタイル用の `style.css` 、リセット用の `sanitize.css` は未作成ですが、必要に応じて追加可能です。
 
 ## 🛠 使用技術（この例で使われている環境）
-- PHP 8.2
+- PHP 8.1
 - Laravel 10.0
 - MySQL 8.0
 - Docker (nginx, php, mysql, phpmyadmin)
