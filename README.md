@@ -154,9 +154,8 @@ php artisan key:generate
     商品と季節の多対多関係を登録
  
 ## 🌐 ローカル環境での確認用URL
-- アプリケーション: [http://localhost/](http://localhost/)
-   → Laravel の初期画面が表示されます  
-  （商品一覧は [http://localhost/products](http://localhost/products) から確認できます）
+- アプリケーション: [http://localhost/products](http://localhost/products)
+  → 商品一覧画面が表示されます
 - phpMyAdmin: [http://localhost:8080/](http://localhost:8080/)
   → DB 接続確認やテーブル内容の確認が可能です
 
