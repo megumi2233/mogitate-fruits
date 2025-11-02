@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# laravel-docker-template
-=======
 # mogitate-fruits
 
 ## 概要　
@@ -95,7 +92,7 @@ php artisan key:generate
 
 ## 🛠 使用技術（この例で使われている環境）
 - PHP 8.1
-- Laravel 10.0
+- Laravel 8.83.8
 - MySQL 8.0
 - Docker (nginx, php, mysql, phpmyadmin)
 
