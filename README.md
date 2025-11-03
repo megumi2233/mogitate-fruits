@@ -90,6 +90,12 @@ php artisan key:generate
 
 ※ 共通スタイル用の `style.css` 、リセット用の `sanitize.css` は未作成ですが、必要に応じて追加可能です。
 
+### 🌐 ローカル環境での確認用URL
+- アプリケーション: [http://localhost/products](http://localhost/products)
+  → 商品一覧画面が表示されます
+- phpMyAdmin: [http://localhost:8080/](http://localhost:8080/)
+  → DB 接続確認やテーブル内容の確認が可能です
+
 ## 🛠 使用技術（この例で使われている環境）
 - PHP 8.1
 - Laravel 8.83.8
@@ -108,12 +114,12 @@ php artisan key:generate
 中間テーブル `product_season` によって関係が管理されています。  
 各テーブルは表形式（右揃え）で構成されており、主キー（PK）・外部キー（FK）の役割が明示されています。
 
-![ER図](assets/mogitate-fruits-test2-er.png)
+![ER図](assets/mogitate-fruits-er.png)
 
 ※ 補足：
 1. 図は draw.io（diagrams.net）にて作成し、PNG形式で保存しています。
-2. 元データは `src/mogitate-fruits-test2-er.drawio` にて編集可能です。
-3. PNGファイルは `assets/mogitate-fruits-test2-er.png` に保存されています。  
+2. 元データは `src/mogitate-fruits-er.drawio` にて編集可能です。
+3. PNGファイルは `assets/mogitate-fruits-er.png` に保存されています。  
    → READMEではこの画像を参照しています。
 4. 編集には [draw.io（diagrams.net）](https://app.diagrams.net/) を使用してください。  
 　 ローカルアプリまたはブラウザ版のどちらでも編集可能です。
@@ -206,12 +212,6 @@ php artisan key:generate
    ```bash
    docker-compose exec php php artisan migrate:fresh --seed
    ``` 
-
-### 🌐 ローカル環境での確認用URL
-- アプリケーション: [http://localhost/products](http://localhost/products)
-  → 商品一覧画面が表示されます
-- phpMyAdmin: [http://localhost:8080/](http://localhost:8080/)
-  → DB 接続確認やテーブル内容の確認が可能です
 
 ### 実装状況
 - [x] Docker 環境構築 (nginx, php, mysql, phpmyadmin)
