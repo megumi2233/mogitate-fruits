@@ -73,7 +73,7 @@ DB_PASSWORD=laravel_pass
 php artisan key:generate
 ```
 
-### 5. View ファイルの作成
+### 6. View ファイルの作成
 商品管理機能に関連する画面を作成しました。  
 主なファイル:
 - `resources/views/products/index.blade.php` （商品一覧画面）
@@ -81,7 +81,7 @@ php artisan key:generate
 - `resources/views/products/show.blade.php` （商品詳細画面）
 - `resources/views/layouts/app.blade.php` （共通レイアウト）
 
-### 6. CSS ファイルの作成
+### 7. CSS ファイルの作成
 商品管理画面のデザインを整えるために、ページごとにスタイルを作成しました。  
 主なファイル:
 - `public/css/products.css` （商品一覧画面用）
