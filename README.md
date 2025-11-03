@@ -180,16 +180,16 @@ php artisan key:generate
    ```
 
 2. ローカルの MySQL データを削除
-  ```bash
-  sudo rm -rf ./docker/mysql/data
-  ```
+   ```bash
+   sudo rm -rf ./docker/mysql/data
+   ```
 　（bind mount を使っているため、root 権限が必要）
 
- もし sudo が使えない環境では、コンテナ内で削除してください：
-　```bash
-　docker-compose exec mysql bash
-　rm -rf /var/lib/mysql/*
-　exit
+  もし sudo が使えない環境では、コンテナ内で削除してください：
+ 　```bash
+　 docker-compose exec mysql bash
+　 rm -rf /var/lib/mysql/*
+　 exit
 　```
  → これならホスト側で sudo を使わずに済みます。
 
