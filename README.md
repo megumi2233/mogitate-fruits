@@ -166,7 +166,7 @@ php artisan key:generate
 - Seeder ファイルは `database/seeders/ProductSeeder.php`  に記述しています。
 
   ```bash
-　docker-compose exec php php artisan migrate:fresh --seed
+  docker-compose exec php php artisan migrate:fresh --seed
 　```
   
 ---
