@@ -94,7 +94,11 @@ php artisan key:generate
 - PHP 8.1
 - Laravel 8.83.8
 - MySQL 8.0.26
-- Docker (nginx, php, mysql, phpmyadmin)
+- Docker
+  - nginx (Webサーバ)  
+  - php (アプリケーション)  
+  - mysql (データベース)  
+  - phpmyadmin (DB管理ツール)
 - フロントエンドビルド: Laravel Mix 6
 
 ## 🗂 ER図（このプロジェクトのデータ構造）
