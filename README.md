@@ -154,8 +154,8 @@ php artisan key:generate
   - 各商品は複数の季節と関連付けられる  
 
 - 中間テーブル product_season:  
-  - ProductSeeder 内で `$product->seasons()->attach($seasonIds);` を使用し、  
-    商品と季節の多対多関係を登録
+  - ProductSeeder 内で `$product->seasons()->attach($seasonIds);`
+     を使用し、商品と季節の多対多関係を登録
 
 ### ダミーデータの初期化について
 
@@ -164,9 +164,11 @@ php artisan key:generate
 - 登録テストで追加した商品データが混在している場合も、下記コマンドで初期化できます。
 
 - Seeder ファイルは `database/seeders/ProductSeeder.php`  に記述しています。
-   ```bash
-　　docker-compose exec php php artisan migrate:fresh --seed
-　　 ```
+
+  ```bash
+　docker-compose exec php php artisan migrate:fresh --seed
+　```
+  
 ---
 
 # データを完全にリセットする場合
@@ -193,14 +195,14 @@ php artisan key:generate
 
 3. 再起動
    ```bash
-  docker-compose up -d
-  ```
+   docker-compose up -d
+   ```
    → 起動時に laravel_db が自動で作られ、laravel_user に権限が付与されます。
 
 4. Laravel のマイグレーション＋シーディング
-  ```bash
-  docker-compose exec php php artisan migrate:fresh --seed
-  ``` 
+   ```bash
+   docker-compose exec php php artisan migrate:fresh --seed
+   ``` 
 
 ### 🌐 ローカル環境での確認用URL
 - アプリケーション: [http://localhost/products](http://localhost/products)
