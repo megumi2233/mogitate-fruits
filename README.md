@@ -156,7 +156,52 @@ php artisan key:generate
 - 中間テーブル product_season:  
   - ProductSeeder 内で `$product->seasons()->attach($seasonIds);` を使用し、  
     商品と季節の多対多関係を登録
- 
+
+### ダミーデータの初期化について
+
+- 下記コマンドを実行すると、products テーブルのダミーデータ 10 件が再生成されます。
+
+- 登録テストで追加した商品データが混在している場合も、下記コマンドで初期化できます。
+
+- Seeder ファイルは `database/seeders/ProductSeeder.php`  に記述しています。
+   ```bash
+　　docker-compose exec php php artisan migrate:fresh --seed
+　　 ```
+---
+
+# データを完全にリセットする場合
+通常の初期化（migrate:fresh --seed）だけだと、マウントされたローカルのデータが残骸として残り、再シーダーのときに、エラーがでてしまうので、その場合は、以下の通りで、ダミーデータを初期化できます。
+
+1. コンテナを停止  
+   ```bash
+   docker-compose down
+   ```
+
+2. ローカルの MySQL データを削除
+  ```bash
+  sudo rm -rf ./docker/mysql/data
+  ```
+　（bind mount を使っているため、root 権限が必要）
+
+ もし sudo が使えない環境では、コンテナ内で削除してください：
+　```bash
+　docker-compose exec mysql bash
+　rm -rf /var/lib/mysql/*
+　exit
+　```
+ → これならホスト側で sudo を使わずに済みます。
+
+3. 再起動
+   ```bash
+  docker-compose up -d
+  ```
+   → 起動時に laravel_db が自動で作られ、laravel_user に権限が付与されます。
+
+4. Laravel のマイグレーション＋シーディング
+  ```bash
+  docker-compose exec php php artisan migrate:fresh --seed
+  ``` 
+
 ### 🌐 ローカル環境での確認用URL
 - アプリケーション: [http://localhost/products](http://localhost/products)
   → 商品一覧画面が表示されます
@@ -198,19 +243,12 @@ php artisan key:generate
 - 対応状況  
   現在調査中。レビュー時には検索機能は利用できません。
 
-
 ### 商品画像のアップロード機能
 
 - 商品登録フォームからローカルの画像ファイルを選択してアップロードできます。
 - アップロードされた画像は `storage/app/public/fruits-img` に保存され、DBにはファイル名のみが保存されます。
 - 表示時には `asset('storage/fruits-img/' . $product->image)` を利用し、`public/storage` 経由で画像を参照しています。
 - 初回のみ `php artisan storage:link` を実行して、`storage` ディレクトリと `public` ディレクトリを接続する必要があります。
-
-### ダミーデータの初期化について
-
-- `php artisan migrate:fresh --seed` を実行することで、productsテーブルのダミーデータ10件が再生成されます。
-- 登録テストで追加した商品データが混在している場合も、このコマンドで初期化できます。
-- Seederファイルは `database/seeders/ProductSeeder.php` に記述しています。
 
 ## ライセンス
 このリポジトリは学習・確認テスト用に作成したものであり、商用利用は想定していません。
