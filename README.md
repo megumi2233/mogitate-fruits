@@ -191,6 +191,7 @@ php artisan key:generate
 　 rm -rf /var/lib/mysql/*
 　 exit
 　```
+ 
  → これならホスト側で sudo を使わずに済みます。
 
 3. 再起動
