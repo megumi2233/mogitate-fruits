@@ -184,6 +184,7 @@ php artisan key:generate
    sudo rm -rf ./docker/mysql/data
    ```
 　（bind mount を使っているため、root 権限が必要）
+ 
 
   もし sudo が使えない環境では、コンテナ内で削除してください：
  　```bash
