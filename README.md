@@ -187,14 +187,14 @@ php artisan key:generate
  
 
   もし sudo が使えない環境では、コンテナ内で削除してください：
-  
- 　```bash
-　 docker-compose exec mysql bash
+
+   ```bash
+   docker-compose exec mysql bash
 　 rm -rf /var/lib/mysql/*
 　 exit
-　```
+   ```
  
- → これならホスト側で sudo を使わずに済みます。
+   →これならホスト側で sudo を使わずに済みます。
 
 3. 再起動
    ```bash
