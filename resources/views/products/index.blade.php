@@ -26,7 +26,7 @@
             @forelse ($products as $product)
                 <div class="product-card">
                     <a href="{{ route('products.show', $product->id) }}">
-                        <img src="{{ asset('storage/fruits-img/' . $product->image) }}" alt="{{ $product->name }}"
+                        <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{ $product->name }}"
                             class="product-image">
                         <h2 class="product-name">{{ $product->name }}</h2>
                         <p class="product-price">{{ number_format($product->price) }} 円</p>

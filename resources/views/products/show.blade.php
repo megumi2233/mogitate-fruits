@@ -17,7 +17,7 @@
                 <!-- 左側：画像 -->
                 <div class="product-image-block">
                     @if ($product->image)
-                        <img src="{{ asset('storage/fruits-img/' . $product->image) }}" alt="{{ $product->name ?? '商品画像' }}"
+                        <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{ $product->name ?? '商品画像' }}"
                             class="current-image">
                     @endif
 
