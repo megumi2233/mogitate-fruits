@@ -93,7 +93,7 @@ php artisan key:generate
 ## 🛠 使用技術（この例で使われている環境）
 - PHP 8.1
 - Laravel 8.83.8
-- MySQL 8.0
+- MySQL 8.0.26
 - Docker (nginx, php, mysql, phpmyadmin)
 - フロントエンドビルド: Laravel Mix 6
 
