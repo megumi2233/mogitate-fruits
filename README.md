@@ -187,6 +187,7 @@ php artisan key:generate
  
 
   もし sudo が使えない環境では、コンテナ内で削除してください：
+  
  　```bash
 　 docker-compose exec mysql bash
 　 rm -rf /var/lib/mysql/*
