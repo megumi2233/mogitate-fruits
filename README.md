@@ -14,35 +14,23 @@ Laravel と Docker を使用して、ローカル環境で動作する商品管�
 ## 🛠️ 環境構築手順
 
 ### 1. リポジトリの設定
-このプロジェクトのベースとなるコードを取得するために、GitHubからリポジトリをクローンします。
+このリポジトリを clone してください。
 
-今までの教材の中で~/coachtechディレクトリにlaravelディレクトリを作成しました。 
-
-laravelディレクトリ以下に、laravel-docker-template.gitをクローンしてリポジトリ名をmogitate-fruitsに変更します。
 ```bash
-cd coachtech/laravel
-git clone git@github.com:Estra-Coachtech/laravel-docker-template.git
-mv laravel-docker-template mogitate-fruits
-```
-
-まず、mogitate-fruitsという変更先のリモートリポジトリをpublicで作成します。
-
-変更先のリポジトリの作成が終わったら、ローカルリポジトリから紐付け先を変更します。
-作成したリポジトリから url を取得して、以下のコマンドを実行します。
-```bash
+git clone https://github.com/megumi2233/mogitate-fruits.git
 cd mogitate-fruits
-git remote set-url origin git@github.com:megumi2233/mogitate-fruits.git
-git remote -v
 ```
-最後のコマンドで、変更先の url が表示されれば成功です。
 
 ### 2. Docker の設定
 ローカル環境に必要なサービス（nginx, php, mysql, phpMyAdmin）をDockerで構築・起動します。
+
+事前に Docker Desktop を起動し、クジラ 🐳 アイコンが表示されていることを確認してください。
 
 以下のコマンドでDocker環境を構築・起動しました：
 ```bash
 docker-compose up -d --build
 ```
+コンテナが立ち上がれば成功です。
 
 ### 3. Laravel のパッケージのインストール
 Laravelの動作に必要な依存パッケージをインストールします。
@@ -257,5 +245,21 @@ php artisan key:generate
 
 ## ライセンス
 このリポジトリは学習・確認テスト用に作成したものであり、商用利用は想定していません。
+
+---
+
+## 補足
+提出時点の状態を保持するために、以下のタグを作成しました。
+
+- 提出時点のタグ: `submit-20251105`
+
+採点の際は、このタグを基準に確認いただけます。
+
+---
+## 補足（提出後の修正）
+提出後に README を一部修正しました。  
+環境構築の流れやアプリの動作には影響ありません。  
+
+
 
 
