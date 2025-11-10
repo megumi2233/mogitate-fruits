@@ -95,6 +95,19 @@ php artisan key:generate
   - phpmyadmin (DB管理ツール)
 - フロントエンドビルド: Laravel Mix 6
 
+## productsテーブル
+
+| カラム名       | 型               | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
+|----------------|------------------|-------------|------------|-----------|--------------|
+| id             | bigint unsigned  | ○           |            | ○         |              |
+| name           | varchar(255)     |             | ○          | ○         |              |
+| price          | int              |             |            | ○         |              |
+| image          | varchar(255)     |             |            |           |              |
+| description    | text             |             |            |           |              |
+| created_at     | timestamp        |             |            |           |              |
+| updated_at     | timestamp        |             |            |           |              |
+
+
 ## 🗂 ER図（このプロジェクトのデータ構造）
 このアプリケーションのデータ構造を視覚的に把握するため、以下にER図を掲載しています。
 
