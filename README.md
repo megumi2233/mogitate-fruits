@@ -205,7 +205,7 @@ php artisan key:generate
    ```bash
    sudo rm -rf ./docker/mysql/data
    ```
-　（bind mount を使っているため、root 権限が必要）
+　　（bind mount を使っているため、root 権限が必要）
  
 
   　　もし sudo が使えない環境では、コンテナ内で削除してください：
@@ -216,7 +216,7 @@ php artisan key:generate
 　　　 exit
   　　 ```
  
-   →これならホスト側で sudo を使わずに済みます。
+  　 →これならホスト側で sudo を使わずに済みます。
 
 3. 再起動
    ```bash
