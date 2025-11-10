@@ -216,7 +216,7 @@ php artisan key:generate
 　　　 exit
   　　 ```
  
-  　 →これならホスト側で sudo を使わずに済みます。
+  　　 →これならホスト側で sudo を使わずに済みます。
 
 3. 再起動
    ```bash
