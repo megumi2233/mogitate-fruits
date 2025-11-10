@@ -1,6 +1,6 @@
 # mogitate-fruits
 
-## 概要　
+### 概要　
 このリポジトリは、確認テスト第2回の課題として作成した「果物の商品を管理するアプリケーション」です。
 
 Laravel と Docker を使用して、ローカル環境で動作する商品管理機能を構築しています。 
@@ -11,9 +11,9 @@ Laravel と Docker を使用して、ローカル環境で動作する商品管�
 
 ---
 
-## 🛠️ 環境構築手順
+### 🛠️ 環境構築手順
 
-### 1. リポジトリの設定
+## 1. リポジトリの設定
 このリポジトリを clone してください。
 
 ```bash
@@ -21,7 +21,7 @@ git clone https://github.com/megumi2233/mogitate-fruits.git
 cd mogitate-fruits
 ```
 
-### 2. Docker の設定
+## 2. Docker の設定
 ローカル環境に必要なサービス（nginx, php, mysql, phpMyAdmin）をDockerで構築・起動します。
 
 事前に Docker Desktop を起動し、クジラ 🐳 アイコンが表示されていることを確認してください。
@@ -32,14 +32,14 @@ docker-compose up -d --build
 ```
 コンテナが立ち上がれば成功です。
 
-### 3. Laravel のパッケージのインストール
+## 3. Laravel のパッケージのインストール
 Laravelの動作に必要な依存パッケージをインストールします。
 ```bash
 docker-compose exec php bash
 composer install
 ```
 
-### 4. .env ファイルの作成
+## 4. .env ファイルの作成
 Laravelの環境設定を行うために、.envファイルを作成し、アプリケーションキーを生成します。
 ```bash
 cp .env.example .env
@@ -55,13 +55,13 @@ DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
 
-### 5. アプリケーションキーの生成
+## 5. アプリケーションキーの生成
 アプリケーションを起動するためのキーを生成します。
 ```bash
 php artisan key:generate
 ```
 
-### 6. View ファイルの作成
+## 6. View ファイルの作成
 商品管理機能に関連する画面を作成しました。  
 主なファイル:
 - `resources/views/products/index.blade.php` （商品一覧画面）
@@ -69,7 +69,7 @@ php artisan key:generate
 - `resources/views/products/show.blade.php` （商品詳細画面）
 - `resources/views/layouts/app.blade.php` （共通レイアウト）
 
-### 7. CSS ファイルの作成
+## 7. CSS ファイルの作成
 商品管理画面のデザインを整えるために、ページごとにスタイルを作成しました。  
 主なファイル:
 - `public/css/products.css` （商品一覧画面用）
@@ -78,13 +78,17 @@ php artisan key:generate
 
 ※ 共通スタイル用の `style.css` 、リセット用の `sanitize.css` は未作成ですが、必要に応じて追加可能です。
 
+---
+
 ### 🌐 ローカル環境での確認用URL
 - アプリケーション: [http://localhost/products](http://localhost/products)
   → 商品一覧画面が表示されます
 - phpMyAdmin: [http://localhost:8080/](http://localhost:8080/)
   → DB 接続確認やテーブル内容の確認が可能です
 
-## 🛠 使用技術（この例で使われている環境）
+---
+
+### 🛠 使用技術（この例で使われている環境）
 - PHP 8.1
 - Laravel 8.83.8
 - MySQL 8.0.26
@@ -95,6 +99,9 @@ php artisan key:generate
   - phpmyadmin (DB管理ツール)
 - フロントエンドビルド: Laravel Mix 6
 
+---
+
+### 📋 テーブル設計
 ## productsテーブル
 
 | カラム名       | 型               | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
@@ -108,7 +115,9 @@ php artisan key:generate
 | updated_at     | timestamp        |             |            |           |              |
 
 
-## 🗂 ER図（このプロジェクトのデータ構造）
+---
+
+### 🗂 ER図（このプロジェクトのデータ構造）
 このアプリケーションのデータ構造を視覚的に把握するため、以下にER図を掲載しています。
 
 この図では、`products` テーブルと `seasons` テーブルが「多対多」のリレーションで接続されており、  
@@ -127,7 +136,9 @@ php artisan key:generate
 5. ER図の更新手順：drawioで編集 → PNG再出力 → assetsに上書き保存 → README確認  
    ※GitHub上で画像が更新されない場合は、Shift+再読み込み（Ctrl+Shift+R）などでキャッシュを強制クリアしてください。
 
-### データ仕様（要点）
+---
+
+### 📑 データ仕様（要点）
 
 - products テーブル  
   - name: string 型（商品名）  
@@ -148,7 +159,9 @@ php artisan key:generate
     $product->seasons()->attach($seasonIds);
     ```
 
-### ダミーデータの作成
+---
+
+### 🧪 ダミーデータの作成
 
 - seasons テーブル: Seeder を使用して以下 4 件を作成  
   1. 春  
@@ -164,7 +177,9 @@ php artisan key:generate
   - ProductSeeder 内で `$product->seasons()->attach($seasonIds);`
      を使用し、商品と季節の多対多関係を登録
 
-### ダミーデータの初期化について
+---
+
+### 🔄 ダミーデータの初期化について
 
 - 下記コマンドを実行すると、products テーブルのダミーデータ 10 件が再生成されます。
 
@@ -178,7 +193,7 @@ php artisan key:generate
   
 ---
 
-# データを完全にリセットする場合
+### 🗑️ データを完全にリセットする場合
 通常の初期化（migrate:fresh --seed）だけだと、マウントされたローカルのデータが残骸として残り、再シーダーのときに、エラーがでてしまうので、その場合は、以下の通りで、ダミーデータを初期化できます。
 
 1. コンテナを停止  
@@ -213,8 +228,9 @@ php artisan key:generate
    ```bash
    docker-compose exec php php artisan migrate:fresh --seed
    ``` 
+---
 
-### 実装状況
+### 🚧 実装状況
 - [x] Docker 環境構築 (nginx, php, mysql, phpmyadmin)
 - [x] Laravel プロジェクト作成
 - [x] モデル・マイグレーション作成（products, seasons, 中間テーブル）
@@ -226,11 +242,15 @@ php artisan key:generate
 - [ ] 商品検索機能（部分一致検索）
 - [ ] 商品並び替え機能（価格の高い順／低い順）
 
-### 提出にあたって
+---
+
+### 📤 提出にあたって
 - main ブランチにコミット済み  
 - `.env` や `vendor/` ディレクトリは、セキュリティ・再現性の観点からコミット対象外としています
 
-### 既知の不具合
+---
+
+### 🐞 既知の不具合
 
 #検索機能について
 - 現象  
@@ -249,19 +269,21 @@ php artisan key:generate
 - 対応状況  
   現在調査中。レビュー時には検索機能は利用できません。
 
-### 商品画像のアップロード機能
+---
+
+### 🖼️ 商品画像のアップロード機能
 
 - 商品登録フォームからローカルの画像ファイルを選択してアップロードできます。
 - アップロードされた画像は `storage/app/public/fruits-img` に保存され、DBにはファイル名のみが保存されます。
 - 表示時には `asset('storage/fruits-img/' . $product->image)` を利用し、`public/storage` 経由で画像を参照しています。
 - 初回のみ `php artisan storage:link` を実行して、`storage` ディレクトリと `public` ディレクトリを接続する必要があります。
 
-## ライセンス
+### 📜 ライセンス
 このリポジトリは学習・確認テスト用に作成したものであり、商用利用は想定していません。
 
 ---
 
-## 補足
+### 💡 補足（提出時点）
 提出時点の状態を保持するために、以下のタグを作成しました。
 
 - 提出時点のタグ: `submit-20251105`
@@ -269,7 +291,7 @@ php artisan key:generate
 採点の際は、このタグを基準に確認いただけます。
 
 ---
-## 補足（提出後の修正）
+### ✏️ 補足（提出後の修正）
 提出後に README を一部修正しました。  
 環境構築の流れやアプリの動作には影響ありません。  
 
